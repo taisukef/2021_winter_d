@@ -7,3 +7,4 @@ import { Server } from "https://js.sabae.cc/Server.js"
     }
   }
 new MyServer(8001);
+//this is test
