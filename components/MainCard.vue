@@ -7,7 +7,7 @@
       color="indigo"
       dark
     >
-      <v-toolbar-title>{{title}}</v-toolbar-title>
+      <v-toolbar-title>{{productTitle}}</v-toolbar-title>
     </v-toolbar>
     <v-container>
       <v-row dense>
@@ -54,7 +54,7 @@
               {{description}}
             </v-card-text>
           </v-card>
-        <Bazuri ></Bazuri>
+        <Bazuri></Bazuri>
         </v-col>
       </v-row>
     </v-container>
@@ -67,20 +67,17 @@
       Bazuri
     },
 
+    props: {
+      items: Array,
+      productTitle: String,
+      author: String,
+      description: String
+    },
+
     data: () => ({
-      title:'aaaa',
-      author:'入力された名前',
-      description:'入力された概要入力された概要入力された概要入力された概要入力された概要入力された概要入力された概要',
       files:[],
       likeNum:0,
       shareNum:0,
-
-      items: [
-        {
-          src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-          flex: 12
-        },
-      ],
     }),
 
     created:function(){
