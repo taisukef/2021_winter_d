@@ -35,33 +35,24 @@ class MyServer extends Server {
                 // 2つめ投稿以降は最新のID足す1
                 nextid = db.timeline[0].id + 1;
             }
+
+            /**
+             * このぶぶんに書きましょう
+             */
             let newpost = {
-                id: nextid,
-                url: req.url,
-                good: 0
+                image_url: req.image_url,
+                tilte: req.title,
+                user_name: req.user_name,
+                description: req.description
             };
+
             // timeline配列の先頭に追加する
             db.timeline.unshift(newpost);
-        } else if (path === "/api/good") {
-            // 写真にいいねをする
-            // タイムラインからIDで探して、いいねを1増やす
-            for (let i = 0; i < db.timeline.length; i++) {
-                if (db.timeline[i].id === req.id) {
-                    db.timeline[i].good++;
-                    break;
-                }
-            }
-        } else if (path === "/api/trend") {
-            // いいねの多い順に並び替えて返す
-            // db.timeline.sortにするとDBの内容まで変わってしまうので注意！
-            // trend変数にコピー(slice)してからソートする
-            let trend = db.timeline.slice();
-            trend.sort((a, b) => b.good - a.good);
-            resp = trend;
         }
+
         // DBの保存
         Deno.writeTextFileSync("db.json", JSON.stringify(db, null, "\t"));
         return resp;
     }
 }
-new MyServer(80);
+new MyServer(8001);
