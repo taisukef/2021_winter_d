@@ -41,13 +41,15 @@ class MyServer extends Server {
              */
             let newpost = {
                 image_url: req.image_url,
-                tilte: req.title,
+                title: req.title,
                 user_name: req.user_name,
                 description: req.description
             };
 
             // timeline配列の先頭に追加する
             db.timeline.unshift(newpost);
+        } else if (path === "/api/get_bazuri") {
+            resp = db.timeline[0];
         }
 
         // DBの保存
