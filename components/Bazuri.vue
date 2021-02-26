@@ -1,19 +1,22 @@
 <template>
+  <div>
   <v-card
     class="mx-auto"
     light
+    v-for="(account,i) in accounts"
+    :key="i"
   >
     <v-timeline
       align-top
       dense
     >
       <v-timeline-item
-        v-for="(account,i) in accounts"
-        :key="i"
+        v-if="account.showFlag"
         small
         right
       >
         <v-card
+          v-if="account.showFlag"
           class="mx-auto"
           color="#26c6da"
           dark
@@ -51,6 +54,7 @@
       </v-timeline-item>
     </v-timeline>
   </v-card>
+  </div>
 </template>
 
 <script>
@@ -63,6 +67,7 @@
           comment:'用意したコメント',
           likeNum:2,
           shareNum:0,
+          showFlag:false
         },
         {
           src:'https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light',
@@ -70,8 +75,48 @@
           comment:'用意したコメント',
           likeNum:1,
           shareNum:1,
+          showFlag:false
+        },
+        {
+          src:'https://avataaars.io',
+          name:'hoge',
+          comment:'用意したコメント',
+          likeNum:2,
+          shareNum:0,
+          showFlag:false
+        },
+        {
+          src:'https://avataaars.io',
+          name:'hoge',
+          comment:'用意したコメント',
+          likeNum:2,
+          shareNum:0,
+          showFlag:false
+        },
+        {
+          src:'https://avataaars.io',
+          name:'hoge',
+          comment:'用意したコメント',
+          likeNum:2,
+          shareNum:0,
+          showFlag:false
+        },
+        {
+          src:'https://avataaars.io',
+          name:'hoge',
+          comment:'用意したコメント',
+          likeNum:2,
+          shareNum:0,
+          showFlag:false
         },
       ]
     }),
+
+    created:function(){
+      setInterval(() => {
+        let rand = Math.floor(Math.random()*6)
+        this.accounts[rand].showFlag = true
+      }, 3000);
+    }
   }
 </script>
