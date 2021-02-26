@@ -34,7 +34,7 @@
                     <v-text-field label="作品タイトル" required v-model="title"></v-text-field>
                   </v-col>
                   <v-col cols="6">
-                    <v-text-field label="製作者名" required v-model="name"></v-text-field>
+                    <v-text-field label="製作者名" required v-model="author"></v-text-field>
                   </v-col>
                   <v-col cols="12">
                     <v-textarea label="概要" outlined required v-model="description"></v-textarea>
@@ -59,7 +59,7 @@
 
     data:()=>({
       title:'',
-      name:'',
+      author:'',
       description:'',
       files:[],
     }),

@@ -33,7 +33,7 @@
             <v-card-actions>
               <v-list-item class="grow">
                 <v-list-item-content>
-                  <v-list-item-title class="title font-weight-bold">{{name}}</v-list-item-title>
+                  <v-list-item-title class="title font-weight-bold">{{author}}</v-list-item-title>
                 </v-list-item-content>
                 <v-row
                   align="center"
@@ -42,11 +42,11 @@
                   <v-btn icon>
                     <v-icon class="mr-1">mdi-heart</v-icon>
                   </v-btn>
-                  <span class="subheading mr-2">256</span>
+                  <span class="subheading mr-2">{{likeNum}}</span>
                   <v-btn icon>
                     <v-icon class="mr-1">mdi-share-variant</v-icon>
                   </v-btn>
-                  <span class="subheading">45</span>
+                  <span class="subheading">{{shareNum}}</span>
                 </v-row>
               </v-list-item>
             </v-card-actions>
@@ -70,9 +70,11 @@
 
     data: () => ({
       title:'入力されたタイトル',
-      name:'入力された名前',
+      author:'入力された名前',
       description:'入力された概要入力された概要入力された概要入力された概要入力された概要入力された概要入力された概要',
       files:[],
+      likeNum:0,
+      shareNum:0,
 
       items: [
         {
@@ -81,5 +83,15 @@
         },
       ],
     }),
+
+    created:function(){
+      setInterval(() => {
+        this.likeNum +=10
+      }, 1000);
+
+      setInterval(() => {
+        this.shareNum +=4
+      }, 3000);
+    }
   }
 </script>
