@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <input type="file" id="imgfile" multiple>
+      <!-- <input type="file" id="imgfile" multiple> -->
 
     </div>
     <v-card dark>
@@ -58,8 +58,8 @@
 </template>
 <script>
 
-    import { ImageUploader } from "https://code4sabae.github.io/js/ImageUploader.js";
-    import { fetchJSON } from "https://code4sabae.github.io/js/fetchJSON.js";
+    // import { ImageUploader } from "https://code4sabae.github.io/js/ImageUploader.js";
+    // import { fetchJSON } from "https://code4sabae.github.io/js/fetchJSON.js";
 
 
 
@@ -76,19 +76,19 @@
 
     methods:{
       submit:function(){
-        window.onload = async () => {
-            imgfile.onchange = async (e) => {
-                for (let i = 0; i < e.target.files.length; i++) {
-                    let file = e.target.files[i];
-                    let uploader = new ImageUploader("/data/");
-                    // 最大幅1200px、最大ファイルサイズ1メガバイト
-                    uploader.setFile(file, 1200, 1024 * 1024);
-                    uploader.onload = async (url) => {
-                        await fetchJSON("/api/post", {"url": url});
-                    };
-                }
-            };
-        };
+        // window.onload = async () => {
+        //     imgfile.onchange = async (e) => {
+        //         for (let i = 0; i < e.target.files.length; i++) {
+        //             let file = e.target.files[i];
+        //             let uploader = new ImageUploader("/data/");
+        //             // 最大幅1200px、最大ファイルサイズ1メガバイト
+        //             uploader.setFile(file, 1200, 1024 * 1024);
+        //             uploader.onload = async (url) => {
+        //                 await fetchJSON("/api/post", {"url": url});
+        //             };
+        //         }
+        //     };
+        // };
       }
     }
   }
