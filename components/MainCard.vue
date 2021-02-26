@@ -60,7 +60,6 @@
     </v-container>
   </v-card>
 </template>
-
 <script>
   import Bazuri from '~/components/Bazuri.vue'
   export default {
@@ -86,12 +85,36 @@
 
     created:function(){
       setInterval(() => {
-        this.likeNum +=10
+        this.likeNum +=8
       }, 1000);
 
       setInterval(() => {
-        this.shareNum +=4
+        this.likeNum +=1
+      }, 1500);
+
+      setInterval(() => {
+        this.likeNum +=4
       }, 3000);
+
+      setInterval(() => {
+        this.likeNum +=500
+      }, 20000);
+
+      setInterval(() => {
+        this.shareNum +=1
+      }, 1000);
+
+      setInterval(() => {
+        this.shareNum +=7
+      }, 2500);
+
+      setInterval(() => {
+        this.shareNum +=49
+      }, 10000);
+
+      setInterval(() => {
+        this.shareNum +=300
+      }, 20000);
     }
   }
 </script>
