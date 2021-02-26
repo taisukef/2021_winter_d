@@ -94,3 +94,7 @@ docs
 firebase-debug.log
 firebase-debug.*.log
 .firebase
+
+.idea/
+data/
+db.json
