@@ -18,7 +18,7 @@
                     multiple
                     accept="image/png, image/jpeg"
                     prepend-icon="mdi-image"
-                    v-model="files"
+                    @change="upload"
                   >
                     <template v-slot:selection="{ text }">
                       <v-chip
@@ -56,39 +56,52 @@
     </v-card>
   </div>
 </template>
-<script>
 
-    // import { ImageUploader } from "https://code4sabae.github.io/js/ImageUploader.js";
-    // import { fetchJSON } from "https://code4sabae.github.io/js/fetchJSON.js";
+<script type="module">
+  import { fetchJSON } from "~/vendor/fetchJSON.js";
 
+  export default {
 
-
-  export default{
     components:{
     },
 
-    data:()=>({
-      title:'',
-      author:'',
-      description:'',
-      files:[],
-    }),
+    data: () => (
+      {
+        title: '',
+        author: '',
+        description: '',
+        image_url: ''
+      }
+    ),
 
-    methods:{
-      submit:function(){
-        // window.onload = async () => {
-        //     imgfile.onchange = async (e) => {
-        //         for (let i = 0; i < e.target.files.length; i++) {
-        //             let file = e.target.files[i];
-        //             let uploader = new ImageUploader("/data/");
-        //             // 最大幅1200px、最大ファイルサイズ1メガバイト
-        //             uploader.setFile(file, 1200, 1024 * 1024);
-        //             uploader.onload = async (url) => {
-        //                 await fetchJSON("/api/post", {"url": url});
-        //             };
-        //         }
-        //     };
-        // };
+    methods: {
+      submit: async function () {
+        await fetchJSON("http://localhost:8001/api/post", {
+          image_url: this.url,
+          title: this.title,
+          user_name: this.author,
+          description: this.description
+        });
+      },
+
+      upload: function (files) {
+        import("~/vendor/ImageUploader.js").then(
+          _module => {
+            const ImageUploader = _module.ImageUploader
+
+            for (let i = 0; i < files.length; i++) {
+              let file = files[i];
+
+              let uploader = new ImageUploader("http://localhost:8001/data/");
+              // 最大幅1200px、最大ファイルサイズ1メガバイト
+              uploader.setFile(file, 1200, 1024 * 1024);
+
+              uploader.onload = (url) => {
+                this.url = url
+              }
+            }
+          }
+        )
       }
     }
   }
