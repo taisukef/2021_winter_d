@@ -269,6 +269,46 @@
           shareNum:0,
           showFlag:false
         },
+        {
+          src:'https://1.bp.blogspot.com/-cR5rLigaI4g/XnLn9gk3XDI/AAAAAAABX1A/Czr9fWnUpro11RKoWbWHodLpoO8eIsntQCNcBGAsYHQ/s1600/kinshi_mark_chair.png',
+          name:'moon.',
+          comment:'クオリティ高い',
+          likeNum:0,
+          shareNum:0,
+          showFlag:false
+        },
+        {
+          src:'https://1.bp.blogspot.com/-H61djj8LaRk/X68akpuOknI/AAAAAAABcSA/6h-CmsvWsw0eum4hgZ6jje0f4ctNxZG9wCNcBGAsYHQ/s675/cthulhu_deep_ones.png',
+          name:'ikemoto',
+          comment:'鳥肌たった',
+          likeNum:2,
+          shareNum:0,
+          showFlag:false
+        },
+        {
+          src:'https://1.bp.blogspot.com/-O0V5av6BgUc/XkZc1GozC9I/AAAAAAABXQQ/Didhw22gxicNyctmeAhS3BxEFRHLl55uwCNcBGAsYHQ/s1600/fashion_button_tobu_himan.png',
+          name:'Kanon',
+          comment:'お前こんな物作って誇らしくないの？？',
+          likeNum:7,
+          shareNum:1,
+          showFlag:false
+        },
+        {
+          src:'https://1.bp.blogspot.com/-4IDaE_D0XOg/XqfJS3Wrg-I/AAAAAAABYlg/5bFXziZ9W1MfZKhe6LBpD8GiH6dTWs7lQCNcBGAsYHQ/s1600/mask_tedukuri_man.png',
+          name:'Air',
+          comment:'ちょうどこれが欲しかった',
+          likeNum:3,
+          shareNum:1,
+          showFlag:false
+        },
+        {
+          src:'https://1.bp.blogspot.com/-t__Pf5Ns-ec/XTPoogtod0I/AAAAAAABT0k/-9uP3fRcG0MIBXCEhOYXR8sZjE-BKhNMQCLcBGAs/s800/saihou_hari_kuyou.png',
+          name:'Re書き',
+          comment:'商品化はよ',
+          likeNum:0,
+          shareNum:0,
+          showFlag:false
+        },
       ],
       inNum:0,
     }),
@@ -277,7 +317,7 @@
       setInterval(() => {
         // let rand = Math.floor(Math.random()*25)
         this.inNum++
-        if(this.inNum < 26) {
+        if(this.inNum < 31) {
           this.accounts[this.inNum].showFlag = true
           // console.log("this.inNum:"+this.inNum)
         }

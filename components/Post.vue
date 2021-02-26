@@ -85,7 +85,7 @@
       },
 
       upload: function (files) {
-        import("~/vendor/ImageUploader.js").then(
+        import("~/vendor/imageUploader.js").then(
           _module => {
             const ImageUploader = _module.ImageUploader
 

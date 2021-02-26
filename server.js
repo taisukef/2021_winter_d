@@ -22,7 +22,7 @@ class MyServer extends Server {
         let resp = {};  // フロントエンドに返すJSON
         if (path === "/api/timeline") {
             // タイムラインをそのまま返す
-            resp = db.timeline;
+            resp = db.timeline[0];
         } else if (path === "/api/post") {
             // タイムラインに投稿する
             // 画像ファイル自体は「/data/」のAPIで送られていて
