@@ -1,5 +1,9 @@
 <template>
   <div>
+    <div>
+      <!-- <input type="file" id="imgfile" multiple> -->
+
+    </div>
     <v-card dark>
       <div id="contactMain">
         <h1 align="center" id="title">Bazらせたい作品を投稿！！</h1>
@@ -52,10 +56,12 @@
     </v-card>
   </div>
 </template>
+
 <script type="module">
   import { fetchJSON } from "~/vendor/fetchJSON.js";
 
   export default {
+
     components:{
     },
 

@@ -4,7 +4,7 @@
     dark
   >
     <div class="flex-grow-1"></div>
-    <div>© 2021 チーム hogehoge</div>
+    <div>© 2021 Dチーム</div>
   </v-footer>
 </template>
 

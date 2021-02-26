@@ -30,7 +30,7 @@
                 ></v-img>
               </v-list-item-avatar>
               <v-list-item-content>
-                <v-list-item-title class="font-weight-bold">用意した名前</v-list-item-title>
+                <v-list-item-title class="font-weight-bold">{{account.name}}</v-list-item-title>
               </v-list-item-content>
               <v-row
                 align="center"
@@ -62,61 +62,226 @@
     data:() => ({
       accounts:[
         {
-          src:'https://avataaars.io',
+          src:'https://1.bp.blogspot.com/-QFEyMUUrYgM/X9QSNE27xvI/AAAAAAABcyY/iKgL_r2ZNpc4RHXxnuBt88NzTiCm8eX3QCNcBGAsYHQ/s883/pyoko_kagamimochi.png',
           name:'hoge',
-          comment:'用意したコメント',
+          comment:'これからも応援してます！！！頑張ってください！！！！',
           likeNum:2,
           shareNum:0,
           showFlag:false
         },
         {
+          src:'https://1.bp.blogspot.com/-EHTjcMN0orc/X9w6LbhUDSI/AAAAAAABc-4/cv1aSisNw7M28D-jWyIIKquMzU5ot8sQQCNcBGAsYHQ/s760/mask_woman2_angry.png',
+          name:'akira',
+          comment:'こういうのを待ってた',
+          likeNum:0,
+          shareNum:0,
+          showFlag:false
+        },
+        {
+          src:'https://1.bp.blogspot.com/-lQvVaZVuCfs/XvcI4m2KdKI/AAAAAAABZts/6a_b9K3DrscSuAa_9lY6dDEb313PNnklwCNcBGAsYHQ/s1600/megane_hikaru_woman.png',
+          name:'リュック',
+          comment:'ついに出てしまった、、、、',
+          likeNum:0,
+          shareNum:0,
+          showFlag:false
+        },
+        {
+          src:'https://1.bp.blogspot.com/-_Z_yrpWKcy0/XobS9f1uhvI/AAAAAAABYDA/v1ibbrPl9aksayUu2TiN6DCMiePXgyq9wCNcBGAsYHQ/s1600/animal_indo_oorisu.png',
+          name:'Fukuno',
+          comment:'家に額縁で飾りたい',
+          likeNum:4,
+          shareNum:1,
+          showFlag:false
+        },
+        {
+          src:'https://1.bp.blogspot.com/-jlZlCg-8FAM/Xub_u8HTD1I/AAAAAAABZis/ZhUI05AZBEQpVinedZ6Xy-eIucmNuY2SQCNcBGAsYHQ/s1600/pose_pien_uruuru_man.png',
+          name:'えーー',
+          comment:'素晴らしすぎる、、',
+          likeNum:2,
+          shareNum:0,
+          showFlag:false
+        },
+        {
+          src:'https://1.bp.blogspot.com/-RBC_bGwqpvI/XxU0TIOZRCI/AAAAAAABaI8/jEsW5rFvJP4OuXpPfVeYT5jf3rlgy_26wCNcBGAsYHQ/s1600/animal_oomimigitsune.png',
+          name:'yossy',
+          comment:'こういうのが見たかったんだよな〜〜〜',
+          likeNum:1,
+          shareNum:0,
+          showFlag:false
+        },
+        {
+          src:'https://1.bp.blogspot.com/-PNtqP_kYbEw/XuMM_ImLmVI/AAAAAAABZeo/7aJRwvd66KEEIsNzjP3ddRxz_DsAWJlZQCNcBGAsYHQ/s1600/animal_alpaca_huacaya.png',
+          name:'よしと',
+          comment:'神がいた',
+          likeNum:3,
+          shareNum:0,
+          showFlag:false
+        },
+        {
+          src:'https://1.bp.blogspot.com/-m0sjkMqhihs/XdttQevvPNI/AAAAAAABWGA/5xm977BUasEpps2yKSYSbLFL0ZGmuUmqgCNcBGAsYHQ/s1600/animal_umadura_koumori.png',
+          name:'jigjig',
+          comment:'これはバズると思ってた',
+          likeNum:5,
+          shareNum:0,
+          showFlag:false
+        },
+        {
+          src:'https://1.bp.blogspot.com/-rK8uAYiV03k/XXXOUO3VLQI/AAAAAAABUsY/wTisaoYk-gM-SAOVG7dwR8NIHxfd6vcSACLcBGAs/s1600/animal_usagi_gray.png',
+          name:'yuri',
+          comment:'まさに完成系という感じ',
+          likeNum:3,
+          shareNum:0,
+          showFlag:false
+        },
+        {
+          src:'https://raw.githubusercontent.com/Genshi0916/Genshi0916.github.io/master/assets/genshi.jpg',
+          name:'げんし',
+          comment:'えwwwwちょwwお前ww有名人じゃんwwwww',
+          likeNum:3,
+          shareNum:1,
+          showFlag:false
+        },
+        {
+          src:'https://1.bp.blogspot.com/-2YHARxCC85M/XXXOTJfHOvI/AAAAAAABUsI/g7wGrWlPUJ4GwP57TmIhUsvV2VcCrFFyACLcBGAs/s1600/animal_ooarikui_arikui.png',
+          name:'のとり',
+          comment:'全俺が泣いた',
+          likeNum:2,
+          shareNum:0,
+          showFlag:false
+        },
+        {
+          src:'https://avataaars.io',
+          name:'masa',
+          comment:'はいプロ',
+          likeNum:10,
+          shareNum:2,
+          showFlag:false
+        },
+        {
           src:'https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light',
-          name:'hoge',
-          comment:'用意したコメント',
+          name:'puipui',
+          comment:'最高',
           likeNum:1,
           shareNum:1,
           showFlag:false
         },
         {
-          src:'https://avataaars.io',
-          name:'hoge',
-          comment:'用意したコメント',
+          src:'https://1.bp.blogspot.com/-mMypAkOae-c/X7zMgo_E6MI/AAAAAAABccg/D76spoUGL2QD9w100gdIF9xuKkVufZuogCNcBGAsYHQ/s703/sagyouin_smartphone_talk_man.png',
+          name:'くぁｗせｄｒｆｔｇ',
+          comment:'これは流石にすごい',
           likeNum:2,
           shareNum:0,
           showFlag:false
         },
         {
-          src:'https://avataaars.io',
-          name:'hoge',
-          comment:'用意したコメント',
+          src:'https://1.bp.blogspot.com/-AEOr9LcsSYE/XzXk61xOTOI/AAAAAAABan4/h3RtZyngmYYHwt5cupf-RYSIGNSbCz7XwCNcBGAsYHQ/s1600/youkai_nurikabe.png',
+          name:'たいやき',
+          comment:'どうやってやったんですか！？',
+          likeNum:2,
+          shareNum:1,
+          showFlag:false
+        },
+        {
+          src:'https://1.bp.blogspot.com/-s0T84lGAZGs/X5Ocis5xtgI/AAAAAAABcAQ/rw2alnGM-XI-eLdmXU6CHN6_raj0G3zGwCNcBGAsYHQ/s974/syoujou_kaikinsyou.png',
+          name:'ゆう',
+          comment:'すげぇwwww',
+          likeNum:4,
+          shareNum:0,
+          showFlag:false
+        },
+        {
+          src:'https://1.bp.blogspot.com/-SsLUgfCrbuE/X9GYCwIHfiI/AAAAAAABcsY/VDiIjmXouVU44jKsSmdCnOxPj9puVg7ZACNcBGAsYHQ/s735/earth_chikyu_kuudousetsu.png',
+          name:'kanikun',
+          comment:'憧れます！！',
+          likeNum:2,
+          shareNum:2,
+          showFlag:false
+        },
+        {
+          src:'https://1.bp.blogspot.com/-bsDqhegOqEs/XzXkwT_HMII/AAAAAAABalY/Uj-hIQFuplsJ4_nU4LAeF6rwG-_yRDbsQCNcBGAsYHQ/s1600/animal_moose.png',
+          name:'kodamanbow',
+          comment:'素晴らしい',
+          likeNum:2,
+          shareNum:1,
+          showFlag:false
+        },
+        {
+          src:'https://1.bp.blogspot.com/-ZOJcLNHUdnc/X4aVbwBlb0I/AAAAAAABbuU/sMuY6n5lyaE7elv5sF67gbw0zo3uJi7NQCNcBGAsYHQ/s922/animal_uma_horse_stand.png',
+          name:'ヘルガ',
+          comment:'カッコイイ！！',
+          likeNum:4,
+          shareNum:0,
+          showFlag:false
+        },
+        {
+          src:'https://1.bp.blogspot.com/-39LCjzW8pDA/XvcI4mEApbI/AAAAAAABZto/IOwANO0mePEoUeH6IeyOohg7gs7q2YPogCNcBGAsYHQ/s1600/megane_hikaru_man.png',
+          name:'mittu',
+          comment:'伸びろ〜',
+          likeNum:1,
+          shareNum:2,
+          showFlag:false
+        },
+        {
+          src:'https://1.bp.blogspot.com/-Dmz83Kh20fk/X4aViqQeLVI/AAAAAAABbwM/4FWBKhKbIyg08_v8trGXnOdYNiYk7j2ngCNcBGAsYHQ/s707/food_fish_hiraki.png',
+          name:'Daniela',
+          comment:'震えた',
+          likeNum:1,
+          shareNum:0,
+          showFlag:false
+        },
+        {
+          src:'https://1.bp.blogspot.com/-5SbKxRJfUes/X5OcTsMEqqI/AAAAAAABb8I/JQNGvwup8kQkDMOp-Vmz3eK435xSyFhtACNcBGAsYHQ/s530/food_ika_mentai.png',
+          name:'わんわん',
+          comment:'素晴らしい',
+          likeNum:2,
+          shareNum:1,
+          showFlag:false
+        },
+        {
+          src:'https://1.bp.blogspot.com/-sF1KA5rQLtA/XtxD2YNliCI/AAAAAAABZVM/cNtsqDbAzB8UFny9wQRafGL_rHzJzfCGACNcBGAsYHQ/s1600/hyoujou_doctor_phone_man_worry.png',
+          name:'にゃーん',
+          comment:'かっこよ、、、',
           likeNum:2,
           shareNum:0,
           showFlag:false
         },
         {
-          src:'https://avataaars.io',
-          name:'hoge',
-          comment:'用意したコメント',
-          likeNum:2,
+          src:'https://1.bp.blogspot.com/-cKqr-qNOU-4/X9GX7yQh8II/AAAAAAABcrM/UbAYQ2L2lB8viieMp4LE-kUKdmcroGIOQCNcBGAsYHQ/s817/character_ha_shibou.png',
+          name:'ねこねこ',
+          comment:'尊すぎて消えた',
+          likeNum:5,
           shareNum:0,
           showFlag:false
         },
         {
-          src:'https://avataaars.io',
-          name:'hoge',
-          comment:'用意したコメント',
-          likeNum:2,
+          src:'https://1.bp.blogspot.com/-F4eG6Ve5DU4/X1CK7k2npFI/AAAAAAABaw0/xz6Ob0ztmF0OSfp5LdDEfBE7gOh89__DQCNcBGAsYHQ/s1600/hakase2_angry.png',
+          name:'シアトル少年',
+          comment:'心が浄化された',
+          likeNum:3,
           shareNum:0,
           showFlag:false
         },
-      ]
+        {
+          src:'https://1.bp.blogspot.com/-dTDLLM_SxiM/X9GYH3mw8gI/AAAAAAABctU/iGJq5LOr3V0pn6vepCCCz7SgcgnQyxVvgCNcBGAsYHQ/s400/food_tamagoyaki_1pon.png',
+          name:'fuga',
+          comment:'いつも楽しみにみてます',
+          likeNum:0,
+          shareNum:0,
+          showFlag:false
+        },
+      ],
+      inNum:0,
     }),
 
     created:function(){
       setInterval(() => {
-        let rand = Math.floor(Math.random()*6)
-        this.accounts[rand].showFlag = true
-      }, 3000);
+        // let rand = Math.floor(Math.random()*25)
+        this.inNum++
+        if(this.inNum < 26) {
+          this.accounts[this.inNum].showFlag = true
+          // console.log("this.inNum:"+this.inNum)
+        }
+      }, 2500);
     }
   }
 </script>
