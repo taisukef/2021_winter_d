@@ -82,6 +82,8 @@
           user_name: this.author,
           description: this.description
         });
+        document.location = "view/";
+        //this.$router.push('view/')
       },
 
       upload: function (files) {
@@ -89,10 +91,9 @@
           _module => {
             const ImageUploader = _module.ImageUploader
 
-            for (let i = 0; i < files.length; i++) {
-              let file = files[i];
-
-              let uploader = new ImageUploader("http://localhost:8001/data/");
+            for (const file of files) {
+              
+              const uploader = new ImageUploader("http://localhost:8001/data/");
               // 最大幅1200px、最大ファイルサイズ1メガバイト
               uploader.setFile(file, 1200, 1024 * 1024);
 
@@ -107,20 +108,20 @@
   }
 </script>
 <style scoped>
-  #contactMain{
+  #contactMain {
     padding-bottom: 30px;
   }
 
-  #title{
+  #title {
     padding:20px 0px;
   }
 
-  a{
+  a {
     text-decoration: none;
   }
 
-  @media screen and (min-width:0px) and ( max-width:480px){
-    #title{
+  @media screen and (min-width:0px) and ( max-width:480px) {
+    #title {
       font-size: 25px;
     }
   }
