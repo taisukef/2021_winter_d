@@ -49,12 +49,7 @@ class MyServer extends Server {
             // timeline配列の先頭に追加する
             db.timeline.unshift(newpost);
         } else if (path === "/api/get_bazuri") {
-            const id = parseInt(req);
-            if (isNaN(id)) {
-                resp = db.timeline[0];
-            } else {
-                resp = db.timeline[db.timeline.length - 1 - id];
-            }
+            resp = db.timeline[0];
         }
 
         // DBの保存
