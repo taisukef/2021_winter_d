@@ -82,6 +82,7 @@
           user_name: this.author,
           description: this.description
         });
+        document.location.href = "view/";
       },
 
       upload: function (files) {
