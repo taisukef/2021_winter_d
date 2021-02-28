@@ -318,8 +318,12 @@
         // let rand = Math.floor(Math.random()*25)
         this.inNum++
         if(this.inNum < 31) {
-          this.accounts[this.inNum].showFlag = true
+          const ac = this.accounts[this.inNum];
+          ac.showFlag = true
           // console.log("this.inNum:"+this.inNum)
+          Notification.requestPermission().then(result => {
+            new Notification('BazUp!!', { body: ac.name + " " + ac.comment }); // , icon: img });
+          });
         }
       }, 2500);
     }
